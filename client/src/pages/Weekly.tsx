@@ -9,9 +9,7 @@ const Weekly = () => {
                 <NavLink 
                     key={i} 
                     to={`/weekly/${day}`}
-                    style={({isActive}) => ({
-                        color: isActive ? 'blue' : 'gray'
-                    })}
+                    className={({isActive}) => isActive ? 'active' : 'inactive'}
                     >
                         Day {day}
                 </NavLink>                   

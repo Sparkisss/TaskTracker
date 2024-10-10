@@ -1,0 +1,19 @@
+@import './_var.scss';
+
+@mixin active {
+    color: $primary-color;
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+
+@mixin inactive {
+    color: $secondary-color;
+    text-decoration: none;
+    font-weight: normal;
+    font-size: 1rem;
+    text-transform: none;
+}
+
+

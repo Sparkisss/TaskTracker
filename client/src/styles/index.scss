@@ -1,3 +1,6 @@
+@import './_var.scss';
+@import './_mixins.scss';
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -12,3 +15,12 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.active {
+  @include active;
+}
+
+.inactive {
+  @include inactive;
+}
+
