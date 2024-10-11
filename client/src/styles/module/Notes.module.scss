@@ -1,0 +1,13 @@
+@import '../_var.scss';
+@import '../_mixins.scss';
+
+.container {
+    grid-area: notes;
+    @include default-state;
+    padding: $large-size;
+    h2 {
+        position: relative;
+        @include show-dark-line-standart;
+    }
+}
+

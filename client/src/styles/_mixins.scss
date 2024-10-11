@@ -22,3 +22,59 @@
     align-items: center;
 }
 
+@mixin default-state {
+    background-color: #fff;
+    color: #000;
+    border-radius: $medium-size;
+}
+
+@mixin show-dark-line-standart {
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0; 
+        width: 100%; 
+        height: 1px;
+        background-color: black;
+    }   
+}
+
+@mixin show-dark-line-big {
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0; 
+        width: 110%; 
+        height: 1px;
+        background-color: black;
+    }    
+}
+
+@mixin show-dark-line-vertical{
+    &::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: -10%; 
+        height: 95%;
+        width: 1px;
+        background-color: black;
+    }    
+}
+
+@mixin show-dark-line-horizontal{
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0; 
+        width: 90%; 
+        height: 1px;
+        background-color: black;
+    }    
+}
+
+
+

@@ -4,9 +4,9 @@
 .container {
     @include flex-center;
     height: 100%;
-    border-radius: $medium-radius;
-    background-color: $olive-drab-color;
-    font-size: 22px;
+    border-radius: $medium-size;
+    background-color: $banana-mania-color;
+    font-size: $x-large-size;
     grid-area: header;
     width: 50%;
 }

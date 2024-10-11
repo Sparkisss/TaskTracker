@@ -1,15 +1,16 @@
 @import '../_var.scss';
-
+@import '../_mixins.scss';
 .container {
     grid-area: priorities;
-    background-color: white;
-    color: black;
-    padding: 0 20px;
-    border-radius: $medium-radius;
+    @include default-state;
+    padding: 0 $large-size;    
+    h2 {
+        margin-top: $medium-size;
+    }
     .column {
         display: flex;
         justify-content: space-between;
-        gap: 10px;
+        gap: $small-size;
         height: 80%;
         .item {           
             width: 100%;
@@ -19,28 +20,12 @@
                     display: none;
                 }
             } 
-            &::after {
-                content: '';
-                position: absolute;
-                right: 0;
-                top: -10%; 
-                height: 95%;
-                width: 1px;
-                background-color: black;
-            }
+            @include show-dark-line-vertical;
             .number {                
-                font-size: 20px;
+                font-size: $large-size;
                 position: relative;
-                padding-bottom: 5px;
-                &::after {
-                    content: '';
-                    position: absolute;
-                    bottom: 0;
-                    left: 0; 
-                    width: 90%; 
-                    height: 1px;
-                    background-color: black;
-                }
+                padding-bottom: $small-size;
+                @include show-dark-line-horizontal;
             }
         }      
     }

@@ -23,15 +23,14 @@ img {
 
 @import './_var.scss';
 @import './_mixins.scss';
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
 
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Josefin Sans', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: $gold-sand-color;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -40,13 +39,13 @@ img {
 }
 
 .main {
-  padding: 20px;
+  padding: $large-size;
   min-height: 100vh;   
   background-color: $coral-reef-color;
   border-radius: 50px;
-  border: 30px solid #242424;
+  border: 30px solid $gold-sand-color;
   display: grid;
-  grid-gap: 10px;
+  grid-gap: $small-size;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 10% 30% 1fr 1fr;
   grid-template-areas: 

@@ -1,0 +1,40 @@
+@import '../_var.scss';
+@import '../_mixins.scss';
+
+.container {
+    grid-area: habits;
+    @include default-state;
+    @include flex-center;
+    .tracker {
+        width: 90%;
+        thead {
+            tr {
+                th {
+                    text-align: left;
+                    position: relative;
+                    @include show-dark-line-big;
+                }
+            }       
+        }
+        tbody {
+            tr {
+                td {
+                    position: relative;
+                    @include show-dark-line-big;
+                    input[type="checkbox"] {
+                        appearance: none;
+                        width: $medium-size;
+                        height: $medium-size;
+                        border-radius: 50%;
+                        border: 2px solid $secondary-color;
+                        outline: none;
+                        cursor: pointer;
+                        &:checked {
+                            background-color: $primary-color;
+                        }
+                    }
+                }
+            }
+        }
+    }    
+}
