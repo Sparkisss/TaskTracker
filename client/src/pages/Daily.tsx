@@ -1,8 +1,12 @@
+import DataShow from "../components/DataShow";
+import Priorities from "../components/Priorities";
+
 const Daily = () => {
     return (
-        <div>
-            Daily
-        </div>
+        <main className="main">
+            <DataShow/>
+            <Priorities/>
+        </main>
     );
 };
 

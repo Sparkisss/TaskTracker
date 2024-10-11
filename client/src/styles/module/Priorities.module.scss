@@ -1,0 +1,47 @@
+@import '../_var.scss';
+
+.container {
+    grid-area: priorities;
+    background-color: white;
+    color: black;
+    padding: 0 20px;
+    border-radius: $medium-radius;
+    .column {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        height: 80%;
+        .item {           
+            width: 100%;
+            position: relative;
+            &:last-child {
+                &::after {
+                    display: none;
+                }
+            } 
+            &::after {
+                content: '';
+                position: absolute;
+                right: 0;
+                top: -10%; 
+                height: 95%;
+                width: 1px;
+                background-color: black;
+            }
+            .number {                
+                font-size: 20px;
+                position: relative;
+                padding-bottom: 5px;
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 0; 
+                    width: 90%; 
+                    height: 1px;
+                    background-color: black;
+                }
+            }
+        }      
+    }
+}

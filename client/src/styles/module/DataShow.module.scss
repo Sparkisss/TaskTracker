@@ -1,0 +1,12 @@
+@import '../_var.scss';
+@import '../_mixins.scss';
+
+.container {
+    @include flex-center;
+    height: 100%;
+    border-radius: $medium-radius;
+    background-color: $olive-drab-color;
+    font-size: 22px;
+    grid-area: header;
+    width: 50%;
+}
