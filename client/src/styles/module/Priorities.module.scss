@@ -3,7 +3,7 @@
 .container {
     grid-area: priorities;
     @include default-state;
-    padding: 0 $large-size;    
+    padding: $large-size;    
     h2 {
         margin-top: $medium-size;
     }
