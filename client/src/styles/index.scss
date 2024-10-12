@@ -38,21 +38,65 @@ img {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.main {
-  padding: $large-size;
-  min-height: 100vh;   
-  background-color: $coral-reef-color;
-  border-radius: 50px;
-  border: 30px solid $gold-sand-color;
-  display: grid;
-  grid-gap: $small-size;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 10% 30% 1fr 1fr;
+.main__daily {
+  @include main-grid;
   grid-template-areas: 
     "header header"
     "priorities priorities"
     "shopList habits"
     "shopList notes";
+}
+
+.main_dayOfWeek {
+  @include main-grid;
+  grid-template-areas: 
+    "header header"
+    "dayOfWeek dayOfWeek"
+    "schedule smile"
+    "schedule water"
+    "schedule important"
+    "schedule todos"
+    "notes todos";
+}
+
+.header {
+  grid-area: header;
+}
+
+.dayOfWeek {
+  grid-area: dayOfWeek;
+  @include show-small-component;
+  @include flex-center;
+  gap: $small-size;
+  background-color: #fff;
+  width: 60%;
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.smile {
+  grid-area: smile;
+  div {
+    width: 100%;
+  }
+}
+
+.water {
+  grid-area: water;
+  div {
+    width: 100%;
+  }
+}
+
+.important {
+  grid-area: important;
+}
+
+.todos {
+  grid-area: todos;
 }
 
 .active {

@@ -4,13 +4,13 @@
 .container {
     grid-area: shopList;
     @include default-state;
-    padding-left: $small-size;
+    padding: $large-size;
     h2 {
         margin: $small-size 0 $small-size $small-size;
     }
     ul {
         li {
-            margin: 5px $medium-size;
+            margin: $medium-size;
             &::after {
                 content: '';
                 display: block;

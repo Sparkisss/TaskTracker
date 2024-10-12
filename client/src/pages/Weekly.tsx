@@ -1,21 +1,26 @@
 import { NavLink, Outlet } from "react-router-dom";
 
 const Weekly = () => {
-    const dayOfWeek: number[] = [1, 2, 3, 4, 5, 6, 7]
+    const dayOfWeek: string[] = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun']
 
     return (
-        <div>
-            {dayOfWeek.map((day: number, i: number) => (                
-                <NavLink 
-                    key={i} 
-                    to={`/weekly/${day}`}
-                    className={({isActive}) => isActive ? 'active' : 'inactive'}
-                    >
-                        Day {day}
-                </NavLink>                   
-            ))}   
+        <main className="main_dayOfWeek">
+            
+            <div className="dayOfWeek">            
+                {dayOfWeek.map((day: string, i: number) => (
+                    <div key={i}>
+                        <NavLink 
+                            to={`/weekly/${day}`}
+                            className={({isActive}) => isActive ? 'active' : 'inactive'}
+                            >
+                                {day}
+                        </NavLink> 
+                        <input type="radio" name="day" className="day-checkbox" />
+                    </div>                             
+                ))}
+            </div>               
             <Outlet/>        
-        </div>
+        </main>
     );
 };
 

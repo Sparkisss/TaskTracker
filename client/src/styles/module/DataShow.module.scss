@@ -3,10 +3,7 @@
 
 .container {
     @include flex-center;
-    height: 100%;
-    border-radius: $medium-size;
-    background-color: $banana-mania-color;
-    font-size: $x-large-size;
+    @include show-small-component;
     grid-area: header;
-    width: 50%;
+    padding: $large-size;
 }

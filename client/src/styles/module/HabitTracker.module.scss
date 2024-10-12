@@ -20,7 +20,7 @@
             tr {
                 td {
                     position: relative;
-                    @include show-dark-line-big;
+                    @include show-dark-line-standart;
                     input[type="checkbox"] {
                         appearance: none;
                         width: $medium-size;

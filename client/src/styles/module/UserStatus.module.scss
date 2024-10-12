@@ -1,0 +1,11 @@
+@import '../_mixins.scss';
+@import '../_var.scss';
+.container {
+    @include show-small-component;
+    @include flex-center;
+    background-color: #fff;
+    gap: $x-large-size;
+    img {
+        width: $x-large-size;        
+    }
+}

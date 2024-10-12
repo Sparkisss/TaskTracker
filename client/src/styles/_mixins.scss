@@ -76,5 +76,25 @@
     }    
 }
 
+@mixin show-small-component {
+    height: 100%;
+    border-radius: $medium-size;
+    background-color: $banana-mania-color;
+    font-size: $x-large-size;    
+    width: 50%;
+}
+
+@mixin main-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    grid-auto-rows: minmax(50px, auto); 
+    grid-gap: $small-size;
+    padding: $large-size;
+    min-height: 100vh; 
+    background-color: $coral-reef-color;
+    border-radius: 50px;
+    border: 30px solid $gold-sand-color;
+}
+
 
 
