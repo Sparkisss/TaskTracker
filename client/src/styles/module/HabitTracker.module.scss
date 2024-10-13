@@ -12,7 +12,7 @@
                 th {
                     text-align: left;
                     position: relative;
-                    @include show-dark-line-big;
+                    @include show-line (110%);
                 }
             }       
         }
@@ -20,7 +20,7 @@
             tr {
                 td {
                     position: relative;
-                    @include show-dark-line-standart;
+                    @include show-line (100%);
                     input[type="checkbox"] {
                         appearance: none;
                         width: $medium-size;

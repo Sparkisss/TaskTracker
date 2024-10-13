@@ -7,7 +7,7 @@
     padding: $large-size;
     h2 {
         position: relative;
-        @include show-dark-line-standart;
+        @include show-line (100%);
     }
 }
 

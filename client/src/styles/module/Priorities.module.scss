@@ -25,8 +25,26 @@
                 font-size: $large-size;
                 position: relative;
                 padding-bottom: $small-size;
-                @include show-dark-line-horizontal;
+                @include show-line (90%);
             }
-        }      
+            input {
+                appearance: none;        
+                border: none;
+                background: none;
+                outline: none;
+                padding: 0;
+                margin: 0;
+                font-family: inherit;
+                font-size: inherit;
+                color: inherit;
+            }
+            img {
+                position: absolute;
+                right: $small-size;
+                top: 60%;                
+                width: $small-size;
+                cursor: pointer;
+            }
+        }       
     }
 }
