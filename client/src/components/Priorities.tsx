@@ -1,19 +1,31 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
+import { getData, putData } from '../services/api'
+import { PrioritiesState } from '../types/types'
 import plus from '../assets/plus.svg'
 
 import styles from '../styles/module/Priorities.module.scss'
 
 const Priorities = () => {
-    const [priorities, setPriorities] = useState<string[]>([]);
+    const [priorities, setPriorities] = useState<PrioritiesState>({ _id: '', life: '', health: '', career: '' });
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setPriorities({...priorities, [e.target.name]: e.target.value});        
+        setPriorities({...priorities, [e.target.name]: e.target.value});             
     }
 
-    const handleAdd = () => {
-        console.log(priorities)
-    }
+    useEffect(() => {
+        getData().then(sendPrioritiesData)
+    }, [])
+
+    const sendPrioritiesData = (data: PrioritiesState) => {
+        if (Array.isArray(data) && data.length > 0) {                
+            setPriorities(data[0])
+        } else if (typeof data === 'object' && data !== null) {                
+            setPriorities(data)
+        } else {
+            console.log('Неожиданный формат данных:', data)
+        }
+    } 
 
     return (
         <div className={styles.container}>
@@ -21,20 +33,18 @@ const Priorities = () => {
             <div className={styles.column}>
                 <div className={styles.item}>
                     <div className={styles.number}>1. Life goals</div>
-                    <input type="text" placeholder="take here" name="life" onChange={handleChange}/>
-                    <img src={plus} alt="plus" onClick={handleAdd}/>
+                    <input type="text" placeholder="take here" name="life" value={priorities.life} onChange={handleChange}/>                    
                 </div>
                 <div className={styles.item}>
                     <div className={styles.number}>2. Health</div>
-                    <input type="text" placeholder="take here" name="health" onChange={handleChange}/>
-                    <img src={plus} alt="plus" onClick={handleAdd}/>                
+                    <input type="text" placeholder="take here" name="health" value={priorities.health} onChange={handleChange}/>                                 
                 </div>
                 <div className={styles.item}>
                     <div className={styles.number}>3. Career</div>
-                    <input type="text" placeholder="take here" name="career" onChange={handleChange}/>
-                    <img src={plus} alt="plus" onClick={handleAdd}/>                   
-                </div>                            
+                    <input type="text" placeholder="take here" name="career" value={priorities.career} onChange={handleChange}/>                 
+                </div>                                          
             </div>
+            <img src={plus} alt="plus" onClick={() => putData(priorities)}/>   
         </div>
     );
 };

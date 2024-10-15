@@ -3,7 +3,8 @@
 .container {
     grid-area: priorities;
     @include default-state;
-    padding: $large-size;    
+    padding: $large-size; 
+    position: relative;  
     h2 {
         margin-top: $medium-size;
     }
@@ -20,7 +21,7 @@
                     display: none;
                 }
             } 
-            @include show-dark-line-vertical;
+            @include show-dark-line-vertical;             
             .number {                
                 font-size: $large-size;
                 position: relative;
@@ -38,13 +39,18 @@
                 font-size: inherit;
                 color: inherit;
             }
-            img {
-                position: absolute;
-                right: $small-size;
-                top: 60%;                
-                width: $small-size;
-                cursor: pointer;
-            }
-        }       
+        }   
     }
+    img {
+        position: absolute;
+        right: $large-size;
+        bottom: 12%;
+        width: $large-size;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        filter: brightness(0) saturate(100%) invert(61%) sepia(64%) saturate(239%) hue-rotate(354deg) brightness(91%) contrast(89%);
+        &:hover {
+            filter: brightness(0) saturate(100%) invert(93%) sepia(10%) saturate(1390%) hue-rotate(324deg) brightness(108%) contrast(97%);
+        }
+    }  
 }
