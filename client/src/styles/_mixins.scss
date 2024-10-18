@@ -72,5 +72,27 @@
     border: 30px solid $gold-sand-color;
 }
 
+@mixin input-style {
+    appearance: none;        
+    border: none;
+    background: none;
+    outline: none;
+    padding: 0;
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+}
 
-
+@mixin img-style($size) {
+    position: absolute;
+    right: $large-size;
+    bottom: $size;
+    width: $large-size;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    filter: brightness(0) saturate(100%) invert(61%) sepia(64%) saturate(239%) hue-rotate(354deg) brightness(91%) contrast(89%);
+    &:hover {
+        filter: brightness(0) saturate(100%) invert(93%) sepia(10%) saturate(1390%) hue-rotate(324deg) brightness(108%) contrast(97%);
+    }
+}

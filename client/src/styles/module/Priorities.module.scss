@@ -29,28 +29,11 @@
                 @include show-line (90%);
             }
             input {
-                appearance: none;        
-                border: none;
-                background: none;
-                outline: none;
-                padding: 0;
-                margin: 0;
-                font-family: inherit;
-                font-size: inherit;
-                color: inherit;
+                @include input-style;
             }
         }   
     }
     img {
-        position: absolute;
-        right: $large-size;
-        bottom: 12%;
-        width: $large-size;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        filter: brightness(0) saturate(100%) invert(61%) sepia(64%) saturate(239%) hue-rotate(354deg) brightness(91%) contrast(89%);
-        &:hover {
-            filter: brightness(0) saturate(100%) invert(93%) sepia(10%) saturate(1390%) hue-rotate(324deg) brightness(108%) contrast(97%);
-        }
+        @include img-style(12%);
     }  
 }

@@ -4,3 +4,14 @@ export interface PrioritiesState {
     health: string;
     career: string;
 }
+
+export interface NotesState {
+    _id: string;
+    notes: string;
+}
+
+export interface Habit {
+    _id: string;
+    label: string;
+    days: boolean[];
+}

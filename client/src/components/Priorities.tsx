@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 
 import { getData, putData } from '../services/api'
+import { processData } from '../services/processData'
 import { PrioritiesState } from '../types/types'
 import plus from '../assets/plus.svg'
 
@@ -14,18 +15,8 @@ const Priorities = () => {
     }
 
     useEffect(() => {
-        getData().then(sendPrioritiesData)
+        getData('http://localhost:5000').then(data => processData<PrioritiesState>(data, setPriorities))
     }, [])
-
-    const sendPrioritiesData = (data: PrioritiesState) => {
-        if (Array.isArray(data) && data.length > 0) {                
-            setPriorities(data[0])
-        } else if (typeof data === 'object' && data !== null) {                
-            setPriorities(data)
-        } else {
-            console.log('Неожиданный формат данных:', data)
-        }
-    } 
 
     return (
         <div className={styles.container}>
@@ -44,7 +35,7 @@ const Priorities = () => {
                     <input type="text" placeholder="take here" name="career" value={priorities.career} onChange={handleChange}/>                 
                 </div>                                          
             </div>
-            <img src={plus} alt="plus" onClick={() => putData(priorities)}/>   
+            <img src={plus} alt="plus" onClick={() => putData(priorities, 'http://localhost:5000')}/>   
         </div>
     );
 };

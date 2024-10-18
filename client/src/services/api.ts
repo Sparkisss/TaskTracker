@@ -1,8 +1,6 @@
-import { PrioritiesState } from '../types/types'
-
-export const getData = async () => {
+export const getData = async (path: string) => {
     try {
-        const response = await fetch('http://localhost:5000/', {
+        const response = await fetch(path, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -19,20 +17,23 @@ export const getData = async () => {
     }
 }
 
-export const putData = async (data: PrioritiesState) => {
+export const putData = async <T>(data: T, path: string, wrapData: boolean = false, wrapKey: string = 'data') => {
     try {
-        const response = await fetch('http://localhost:5000/', {
+        const body = wrapData ? JSON.stringify({ [wrapKey]: data }) : JSON.stringify(data);
+        const response = await fetch(path, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
                 'Cache-Control': 'no-cache'
             },
-            body: JSON.stringify(data)
-        })
+            body: body
+        });
         if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`)
-        }                
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return await response.json();
     } catch (error) {
-        console.log(error)
+        console.error('Ошибка при отправке данных:', error);
+        throw error;
     }
 }

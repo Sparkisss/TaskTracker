@@ -2,6 +2,7 @@
 @import '../_mixins.scss';
 
 .container {
+    position: relative;
     grid-area: habits;
     @include default-state;
     @include flex-center;
@@ -18,6 +19,9 @@
         }
         tbody {
             tr {
+                input {
+                    @include input-style;
+                }
                 td {
                     position: relative;
                     @include show-line (100%);
@@ -36,5 +40,8 @@
                 }
             }
         }
+    } 
+    img {
+        @include img-style(10%);
     }    
 }

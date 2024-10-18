@@ -5,9 +5,29 @@
     grid-area: notes;
     @include default-state;
     padding: $large-size;
+    position: relative;
     h2 {
         position: relative;
         @include show-line (100%);
     }
+    textarea {
+        width: 100%;
+        height: 85%;
+        border: none;
+        outline: none;
+        resize: none;
+    }
+    img {
+        position: absolute;
+        top:$large-size;
+        right: $large-size;
+        width: $large-size;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        filter: brightness(0) saturate(100%) invert(61%) sepia(64%) saturate(239%) hue-rotate(354deg) brightness(91%) contrast(89%);
+        &:hover {
+            filter: brightness(0) saturate(100%) invert(93%) sepia(10%) saturate(1390%) hue-rotate(324deg) brightness(108%) contrast(97%);
+        }
+    }  
 }
 
